@@ -57,13 +57,19 @@ public class TicTacToe {
         }
 
         // TODO: three-in-a-row vertically 
+        for(int c=0; c<3; c++){
+           if(board[0][c] != '.' && board[0][c] == board[1][c] && board[1][c] == board[2][c]) {
+                return board[0][c];
+        }
 
         // diagonals
         if(board[0][0] != '.' && board[0][0] == board[1][1] && board[1][1] == board[2][2]) {
             return board[0][0];
         }
         // TODO: check other diagonal
-            
+        if(board[0][2] != '.' && board[0][2] == board[1][1] && board[1][1] == board[2][0]) {
+            return board[0][2];
+
         return '-';
     }
 }
